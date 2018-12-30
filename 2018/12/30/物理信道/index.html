@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="LTE PHY ,Channel,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="物理信道 允许特定信息或数据通过的路径 信道是无需具有可见的、有形状的物理边界，是由一些物理或逻辑属性定义的  下行物理信道ENB→UEPBCH         Physical Broadcast Channel">
+<meta name="keywords" content="LTE PHY ,Channel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物理信道">
+<meta property="og:url" content="http://yoursite.com/2018/12/30/物理信道/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="物理信道 允许特定信息或数据通过的路径 信道是无需具有可见的、有形状的物理边界，是由一些物理或逻辑属性定义的  下行物理信道ENB→UEPBCH         Physical Broadcast Channel">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.sharetechnote.com/html/Mobile/image/ChannelEstimation_01.png">
+<meta property="og:image" content="http://yoursite.com/home/manjuuusaka/.config/Typora/typora-user-images/1545657938211.png">
+<meta property="og:image" content="http://yoursite.com/home/manjuuusaka/.config/Typora/typora-user-images/1545662437598.png">
+<meta property="og:image" content="http://yoursite.com/home/manjuuusaka/.config/Typora/typora-user-images/1545663585009.png">
+<meta property="og:image" content="http://yoursite.com/home/manjuuusaka/.config/Typora/typora-user-images/1545664880783.png">
+<meta property="og:image" content="http://yoursite.com/home/manjuuusaka/.config/Typora/typora-user-images/1545665283553.png">
+<meta property="og:updated_time" content="2018-12-30T06:58:37.935Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="物理信道">
+<meta name="twitter:description" content="物理信道 允许特定信息或数据通过的路径 信道是无需具有可见的、有形状的物理边界，是由一些物理或逻辑属性定义的  下行物理信道ENB→UEPBCH         Physical Broadcast Channel">
+<meta name="twitter:image" content="http://www.sharetechnote.com/html/Mobile/image/ChannelEstimation_01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/30/物理信道/">
+
+
+
+
+
+  <title>物理信道 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/30/物理信道/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="天花">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">物理信道</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T12:02:34+08:00">
+                2018-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="物理信道"><a href="#物理信道" class="headerlink" title="物理信道"></a>物理信道</h1><blockquote>
+<p>允许特定信息或数据通过的路径</p>
+<p>信道是无需具有可见的、有形状的物理边界，是由一些物理或逻辑属性定义的</p>
+</blockquote>
+<h2 id="下行物理信道"><a href="#下行物理信道" class="headerlink" title="下行物理信道"></a>下行物理信道</h2><h3 id="ENB→UE"><a href="#ENB→UE" class="headerlink" title="ENB→UE"></a>ENB→UE</h3><p><strong>PBCH</strong>         Physical Broadcast Channel<br><a id="more"></a>;</p>
+<p><strong>PDCCH</strong>     Physical Downlink Control Channel</p>
+<p><strong>PDSCH</strong>        Physical Downlink Shared Channel</p>
+<p><strong>PCFICH</strong>    Physical Control Format Indicator Channel</p>
+<h2 id="上行物理信道"><a href="#上行物理信道" class="headerlink" title="上行物理信道"></a>上行物理信道</h2><h3 id="UE→ENB"><a href="#UE→ENB" class="headerlink" title="UE→ENB"></a>UE→ENB</h3><p><strong>PRACH</strong>        Physical Random Access Channel</p>
+<p><strong>PUCCH</strong>        Physical Uplink Control Channel</p>
+<p><strong>PUSCH</strong>        Physical Uplink Shared Channel</p>
+<h1 id="参考信号"><a href="#参考信号" class="headerlink" title="参考信号"></a>参考信号</h1><ul>
+<li>在无线通信中（尤其是长距离无线通信），所有信号都将经历噪声、衰减环境，并且变形甚至中断</li>
+<li>为了从失真变形的信号中解析出正确的信号，发射器发送一个经过定义的信号，并且接收器通过无线环境解析该信号。这种定义的信号叫做<strong>参考信号</strong></li>
+</ul>
+<h2 id="信道评估"><a href="#信道评估" class="headerlink" title="信道评估"></a>信道评估</h2><p><img src="http://www.sharetechnote.com/html/Mobile/image/ChannelEstimation_01.png" alt="ChannelEstimation_01"></p>
+<h2 id="参考信号类型"><a href="#参考信号类型" class="headerlink" title="参考信号类型"></a>参考信号类型</h2><ul>
+<li>不同的通信系统由于不同的作用使用不同的参考信号</li>
+<li>这是由于没有一种参考信号可以达到所有效果</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Reference Signals</th>
+<th style="text-align:right">RATs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cell Specific Reference Signal</td>
+<td style="text-align:right">3G\</td>
+<td>4G</td>
+</tr>
+<tr>
+<td>Demodulation Reference Signal</td>
+<td style="text-align:right">4G\</td>
+<td>5G</td>
+</tr>
+<tr>
+<td>CSI Reference Signal</td>
+<td style="text-align:right">4G\</td>
+<td>5G</td>
+</tr>
+<tr>
+<td>Sounding Reference Signal</td>
+<td style="text-align:right">4G\</td>
+<td>5G</td>
+</tr>
+<tr>
+<td>Phase Tracking Reference Signal</td>
+<td style="text-align:right">5G</td>
+</tr>
+</tbody>
+</table>
+<h1 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h1><blockquote>
+<p>Sync = Synchronization = Setting the same clock on Sender and Receiver</p>
+<p>不同的无线技术使用不同的，特定的信号来实现同步过程</p>
+</blockquote>
+<p><img src="/home/manjuuusaka/.config/Typora/typora-user-images/1545657938211.png" alt="1545657938211"></p>
+<p>在任何数字通信系统中（甚至是简单的有线通信），都有一种特殊的同步机制。在简单的短距离有线通信系统中，设备通过特定的脉冲信号边沿来同步。在一个有点复杂的有线系统中，它们使用一个通常称为“<strong>preamble</strong>”的位模式序列进行同步。</p>
+<p>在无线通信环境中，影响时间的因素更加多样化。因此我们需要高效和复杂的机制来确保同步。通常在蜂窝系统中，我们使用一种或多种类型的特殊信号进行<strong>下行同步</strong>，<strong>上行同步</strong>使用<strong>RACH</strong>。</p>
+<h1 id="小区选择"><a href="#小区选择" class="headerlink" title="小区选择"></a>小区选择</h1><blockquote>
+<p>一种检测和选择最佳小区来注册的机制</p>
+</blockquote>
+<p><img src="/home/manjuuusaka/.config/Typora/typora-user-images/1545662437598.png" alt="1545662437598"></p>
+<ul>
+<li>测量设备周围小区的信号强度，并且在条件允许的情况下解码SIB</li>
+<li>选择最合适的小区进行注册</li>
+</ul>
+<p>上述小区选择机制总结如下：</p>
+<ol>
+<li>设备开机上电，或是关闭飞行模式</li>
+<li>UE扫描周围所有小区的强度</li>
+<li>如果它检测到功率大于某一电平(该电平在UE radio stack软件中指定，该值将根据UE制造商和型号而变化)，它将解码MIB(主信息块)和带有小区选择参数的某个SIB(系统信息块)。哪个SIB携带这种信息与每种无线电技术不同</li>
+<li>在解码MIB/SIBs之后就可以获得小区选择参数，根据小区选择参数和3gpp协议进行小区选择</li>
+<li>根据以上步骤进行最佳小区选择并注册</li>
+</ol>
+<h1 id="小区重选"><a href="#小区重选" class="headerlink" title="小区重选"></a>小区重选</h1><blockquote>
+<p>一种在空闲模式下检测并选择最佳小区的机制</p>
+</blockquote>
+<p><img src="/home/manjuuusaka/.config/Typora/typora-user-images/1545663585009.png" alt="1545663585009"></p>
+<ul>
+<li>测量UE周围邻小区的信号强度来检测最强小区</li>
+<li>选择最强小区进行注册</li>
+</ul>
+<p>小区重选和小区选择非常相似，小区重选发生在UE完成小区选择并进入空闲模式之后</p>
+<p>上述小区重选机制总结如下：</p>
+<ol>
+<li>UE处于空闲模式（有服务状态）</li>
+<li>UE扫描周围所有小区的电平</li>
+<li>如果它检测到功率大于某一电平(该电平在UE无线电堆栈软件中指定，该值将根据UE制造商和模型的不同而变化)，它将解码带有小区重选参数的某个SIB(系统信息块）</li>
+<li>对SIBs进行解码，得到小区重选参数后，根据小区选择参数和3gpp协议进行小区重选</li>
+<li>根据以上步骤进行最佳小区重选并注册</li>
+</ol>
+<h1 id="功控"><a href="#功控" class="headerlink" title="功控"></a>功控</h1><blockquote>
+<p>开环功控、闭环功控</p>
+</blockquote>
+<p><img src="/home/manjuuusaka/.config/Typora/typora-user-images/1545664880783.png" alt="1545664880783"></p>
+<p>在蜂窝通信中，根据基站与UE之间的距离以及其他信道条件，基站接收到的功率变化很大。为了保持基站接收到的功率稳定(至少不急剧变化)，蜂窝系统采用非常复杂的算法来控制/调整UE的传输功率。这个算法机制叫做功控<strong>Power Control</strong>。在大多数蜂窝通信(至少3G、4G、5G)中，主要有两种功率控制机制，即开环功率控制和闭环功率控制。</p>
+<h1 id="测量"><a href="#测量" class="headerlink" title="测量"></a>测量</h1><p><img src="/home/manjuuusaka/.config/Typora/typora-user-images/1545665283553.png" alt="1545665283553"></p>
+<p>网络要求UE进行粗略的测量，以达到以下目的：</p>
+<ul>
+<li>评估当前链接的信号质量，如RSRP、RSRQ、CQI、RI、PMI…</li>
+<li>在建立载波聚合之前，检查目标小区是否存在（可分离），质量是否足够好</li>
+<li>在执行切换前，检查目标小区是否存在（可分离），质量是否足够好</li>
+</ul>
+<p>在任何情况下，测量命令(从网络到UE的方向)是通过一个特定的RRC消息(3G中的测量控制，4G中的RRC连接重配置)完成的，但是测量报告是根据情况由几个不同的机制完成的</p>
+<ul>
+<li>一些测量（CQI、RI、PMI…）是通过物理信道上报的（PUCCH或PUSCH）</li>
+<li>一些测量（RSRP、RSRQ、Event）是通过RRC消息上报的</li>
+</ul>
+<p>小区测量是蜂窝系统中移动性和信道质量评估，以及自适应调度（如，基于CQI的MCS变化）的非常重要的步骤</p>
+<h1 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h1><ol>
+<li>A UE is in connection with a cell (let’s call this ‘Cell A’)</li>
+<li>Now a situation that requires handover happened</li>
+<li>Network send “signal quality measurement” command to UE for the target cell(‘Cell B’) to which it will handover to.</li>
+<li>UE performance the measurement and report the “measurement result” to the network via the current cell (Cell A).</li>
+<li>Netwok evaluate the measuement result reported by UE</li>
+<li>If the evaluation result turns out to be good for handover, Network send ‘Change Cell’ command to UE.</li>
+<li>UE perform the cell change process.</li>
+<li>If cell change process is completed properly, UE send ‘cell change completion’ message to the network via the target cell (Cell B).</li>
+</ol>
+<p>I used very generic term e.g, “signal quality measurement command” , “measurrement result” , “change cell command” , “cell change completion message” etc. These generic commands can be translated to a specific  jargon for each technology. For example, if i translate these for UMTS, they would be as follows:</p>
+<p>“signal quality measurement command” —&gt; Measurement Control</p>
+<p>“measurement result” —&gt; Measurement Report</p>
+<p>“change cell command” —&gt; Physical Channel Reconfiguration or ActiveSetUpdate</p>
+<p>“cell change completion message” —&gt; Physical Channel Reconfiguration Complete or ActiveSetUpdateComplet</p>
+<p>If you translate them into LTE jargon, they will be as follows:</p>
+<p>“signal quality measuerment command” —&gt; RRC Connection Reconfiguation</p>
+<p>“Measurement result” —&gt; Measurement Report</p>
+<p>“change cell command” —&gt; RRC Connection Reconfiguration</p>
+<p>“cell change completion” —&gt; RRC Connection Reconfiguration Complete</p>
+<p>You may noticed that LTE is using the same message called “RRC Connection Reconfiguration” both for “signal quality measurement command” and “change cell command” . How UE can tell whether it means “signal quality measurement command” or “change cell command” ?</p>
+<p>Good question ! You will see the answer later.</p>
+<p>Then you may have whole lots of questions. It is very good. The more questions you have, the more information you will get through this page..(not now, in the future,2333)Following is a set of my personal questions.</p>
+<ol>
+<li>you talked about “signal quality measurement”. What kind of signal quality UE has to measuer ? Would it be a certain absolute value ? or a some relative value with reference to some other value ? or is it a special event changes ?</li>
+<li>How much time I can leave the current cell to perform the measurement for target cell ? (If the leave too long from the current cell to measure target cell, the call would drop. But if this time is too short, UE would not get correct measurement values).</li>
+<li>What if UE failed to perform the measurement or fail to find the target cell ?</li>
+<li>you talked about “change cell” ,how UE can change cell ? Just cut the connection with the current cell and reconnect to the target cell ? or is there any specific procedure ?</li>
+<li>Cutting the connection from the current cell will be easy , but how can UE reconnect to target cell ?</li>
+<li>What if UE failed to reconnect to target cell after he cut off the connection with the current cell ?</li>
+</ol>
+<p>This list would get longer and longer.</p>
+<p>Now let’s jump into detailed technical aspects of LTE handover. Following is the overall and simplest form of LTE-LTE handover procedure. (This sequence is based on 36.523 TC 8.2.4.2 and I modified the sequence a little bit for clear/easy understanding,hopefully…). It means this is mainly for UE side aspect of Handover Process.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Direction</th>
+<th>Message</th>
+<th>Target Cell</th>
+<th>Memo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>UE<--->SS</---></td>
+<td>&lt;Power On and Registration(PRACH/RACH Response)&gt;</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>UE<--->SS</---></td>
+<td><now ue="" is="" in="" idle="" mode=""></now></td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>UE&lt;—SS</td>
+<td>Paging</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>UE—&gt;SS</td>
+<td>RRC Connection Request</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>UE&lt;—SS</td>
+<td>RRC Connection Setup</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>UE—&gt;SS</td>
+<td>RRC Connection Setup Complete+Attach Request+PDN Conn Req</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>UE&lt;—SS</td>
+<td>Security Mode Command</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>UE—&gt;SS</td>
+<td>Security Mode Complete</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>UE&lt;—SS</td>
+<td>RRC Connection Reconfiguration+Attach Accept+…</td>
+<td>Cell 1</td>
+<td>reactivating default EPS Bearer</td>
+</tr>
+<tr>
+<td>10</td>
+<td>UE—&gt;SS</td>
+<td>RRC Connection Reconfiguration Complete/Attach Complet/…</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>UE&lt;—SS</td>
+<td>RRC Connection Reconfiguration</td>
+<td>Cell 1</td>
+<td>Measurement Control for Target Cell</td>
+</tr>
+<tr>
+<td>12</td>
+<td>UE—&gt;SS</td>
+<td>RRC Connection Reconfiguration Complete</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>UE—&gt;SS</td>
+<td>Measurement Report</td>
+<td>Cell 1</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>UE&lt;—SS</td>
+<td>RRC Connection Reconfiguration</td>
+<td>Cell 1</td>
+<td>Handover Command</td>
+</tr>
+<tr>
+<td>15</td>
+<td>UE—&gt;SS</td>
+<td>PRACH</td>
+<td>Cell 2</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>UE&lt;—SS</td>
+<td>RACH Response</td>
+<td>Cell 2</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>UE—&gt;SS</td>
+<td>RRC Connection Reconfiguration Complete</td>
+<td>Cell 2</td>
+<td>PASS/FAIL</td>
+</tr>
+<tr>
+<td>18</td>
+<td>UE&lt;—SS</td>
+<td>ueCapabilityEnquiry</td>
+<td>Cell 2</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>UE—&gt;SS</td>
+<td>ueCapabilityInformation</td>
+<td>Cell 2</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>UE—&gt;SS</td>
+<td>ulInformationTransfer+Detach Request</td>
+<td>Cell 2</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>UE&lt;—SS</td>
+<td>RRC Connection Release</td>
+<td>Cell 2</td>
+</tr>
+</tbody>
+</table>
+<p> Now let’s dig into some of the critical steps of this handover process. I will start with radio message for these critical steps and put additional comments as time goes a long.</p>
+<h3 id="RRC-Connection-Reconfiguration-for-Target-Cell-Measurement-Step-11"><a href="#RRC-Connection-Reconfiguration-for-Target-Cell-Measurement-Step-11" class="headerlink" title="RRC Connection Reconfiguration for Target Cell Measurement (Step 11)"></a>RRC Connection Reconfiguration for Target Cell Measurement (Step 11)</h3><p>I will add more comments later, but for now let’s just look into the contents of this message. As you see in the parts marked in red, most part of this message about measurement.</p>
+<p>Actual message for the measurement would not be as complicated as this one(may be longer due to the long list of cells to be measured), but I enabled almost every information elements for the reference. Especially understanding the Quantity Configuration parameters would take very long for you to understand in details and would be the main source of problems you will have in field test and field troubleshoot.</p>
+<p>DL-DCCH-Message ::= SEQUENCE</p>
+<p>  +-message ::= CHOICE [c1]</p>
+<p>​    +-c1 ::= CHOICE [rrcConnectionReconfiguration]</p>
+<p>​      +-rrcConnectionReconfiguration ::= SEQUENCE</p>
+<p>​        +-rrc-TransactionIdentifier ::= INTEGER (0..3) [0]///rrc传输标识，整数</p>
+<p>​        +-criticalExtensions ::= CHOICE [c1]///关键扩展，选择</p>
+<p>​          +-c1 ::= CHOICE [rrcConnectionReconfiguration-r8]</p>
+<p>​            +-rrcConnectionReconfiguration-r8 ::= SEQUENCE [100000]///rrc连接重配置，序列</p>
+<p>​              +-measConfig ::= SEQUENCE [01010111111] OPTIONAL:Exist///测量配置，序列，可选，存在</p>
+<p>​              | +-measObjectToRemoveList ::= SEQUENCE OF OPTIONAL:Omit///测量对象删除列表，可选序列，省略</p>
+<p>​              | +-measObjectToAddModList ::= SEQUENCE OF SIZE(1..maxObjectId[32]) [1]///测量对象添加列表，序列大小</p>
+<p>​              | | +-MeasObjectToAddMod ::= SEQUENCE///测量对象添加模式，序列</p>
+<p>​              | |   +-measObjectId ::= INTEGER (1..maxObjectId[32]) [1]///测量对象ID，整数</p>
+<p>​              | |   +-measObject ::= CHOICE [measObjectEUTRA]///测量对象，选择，测量对象EUTRA</p>
+<p>​              | |     +-measObjectEUTRA ::= SEQUENCE [100000]///测量对象，序列</p>
+<p>​              | |       +-carrierFreq ::= INTEGER (0..maxEARFCN[65535]) [6300]///载频，整数</p>
+<p>​              | |       +-allowedMeasBandwidth ::= ENUMERATED [mbw25]///允许测量带宽，枚举</p>
+<p>​              | |       +-presenceAntennaPort1 ::= BOOLEAN [FALSE]///存在天线端口1，布尔</p>
+<p>​              | |       +-neighCellConfig ::= BIT STRING SIZE(2) [01]///邻小区配置，位串大小</p>
+<p>​              | |       +-offsetFreq ::= ENUMERATED [dB0] OPTIONAL:Exist///偏移频率，枚举，可选，存在</p>
+<p>​              | |       +-cellsToRemoveList ::= SEQUENCE OF OPTIONAL:Omit///要删除的小区列表，可选序列，省略</p>
+<p>​              | |       +-cellsToAddModList ::= SEQUENCE OF OPTIONAL:Omit///要添加的小区列表，可选序列，省略</p>
+<p>​              | |       +-blackCellsToRemoveList ::= SEQUENCE OF OPTIONAL:Omit///黑名单小区删除列表，可选序列，省略</p>
+<p>​              | |       +-blackCellsToAddModList ::= SEQUENCE OF OPTIONAL:Omit///黑名单小区添加列表，可选序列，省略</p>
+<p>​              | |       +-cellForWhichToReportCGI ::= INTEGER OPTIONAL:Omit///要报告CGI的小区</p>
+<p>​              | +-reportConfigToRemoveList ::= SEQUENCE OF OPTIONAL:Omit//报告配置删除列表，可选序列，省略</p>
+<p>​              | +-reportConfigToAddModList ::= SEQUENCE OF SIZE(1..maxReportConfigId[32]) [1]///报告配置添加列表，序列大小</p>
+<p>​              | | +-ReportConfigToAddMod ::= SEQUENCE///报告配置添加模式，序列</p>
+<p>​              | |   +-reportConfigId ::= INTEGER (1..maxReportConfigId[32]) [1]///报告配置ID，整数</p>
+<p>​              | |   +-reportConfig ::= CHOICE [reportConfigEUTRA]///报告配置，选择，报告配置EUTRA</p>
+<p>​              | |     +-reportConfigEUTRA ::= SEQUENCE///报告配置EUTRA，序列</p>
+<p>​              | |       +-triggerType ::= CHOICE [event]///触发类型，选择，事件</p>
+<p>​              | |       | +-event ::= SEQUENCE///事件，序列</p>
+<p>​              | |       |   +-eventId ::= CHOICE [eventA3]///事件ID，选择，事件A3</p>
+<p>​              | |       |   | +-eventA3 ::= SEQUENCE///事件A3，序列</p>
+<p>​              | |       |   |   +-a3-Offset ::= INTEGER (-30..30) [0]///A3-Offset,整型（-30..30) , 0</p>
+<p>​              | |       |   |   +-reportOnLeave ::= BOOLEAN [FALSE]///reportOnLeave, 布尔型</p>
+<p>​              | |       |   +-hysteresis ::= INTEGER (0..30) [0]///hysteresis,整型（0..30), 0</p>
+<p>​              | |       |   +-timeToTrigger ::= ENUMERATED [ms640]///timeToTrigger, 枚举型，640毫秒</p>
+<p>​              | |       +-triggerQuantity ::= ENUMERATED [rsrp]///触发参数，枚举型，rsrp</p>
+<p>​              | |       +-reportQuantity ::= ENUMERATED [both]///报告参数，枚举型，所有</p>
+<p>​              | |       +-maxReportCells ::= INTEGER (1..maxCellReport[8]) [1]///最大上报小区，整型(1..8)</p>
+<p>​              | |       +-reportInterval ::= ENUMERATED [ms1024]///上报间隔,枚举型，1024毫秒</p>
+<p>​              | |       +-reportAmount ::= ENUMERATED [r1]///上报量合计，枚举型，r1</p>
+<p>​              | +-measIdToRemoveList ::= SEQUENCE OF OPTIONAL:Omit///要删除的测量ID，可选序列，省略</p>
+<p>​              | +-measIdToAddModList ::= SEQUENCE OF SIZE(1..maxMeasId[32]) [1] OPTIONAL:Exist///要添加的测量ID，序列大小（1..32),1</p>
+<p>​              | | +-MeasIdToAddMod ::= SEQUENCE</p>
+<p>​              | |   +-measId ::= INTEGER (1..maxMeasId[32]) [1]</p>
+<p>​              | |   +-measObjectId ::= INTEGER (1..maxObjectId[32]) [1]</p>
+<p>​              | |   +-reportConfigId ::= INTEGER (1..maxReportConfigId[32]) [1]</p>
+<p>​              | +-quantityConfig ::= SEQUENCE [1111] OPTIONAL:Exist</p>
+<p>​              | | +-quantityConfigEUTRA ::= SEQUENCE [11] OPTIONAL:Exist</p>
+<p>​              | | | +-filterCoefficientRSRP ::= ENUMERATED [fc0] OPTIONAL:Exist///RSRP滤波器系数，枚举型，fc0，可选，存在</p>
+<p>​              | | | +-filterCoefficientRSRQ ::= ENUMERATED [fc0] OPTIONAL:Exist///RSRQ滤波器系数，枚举型，fc0，可选，存在</p>
+<p>​              | | +-quantityConfigUTRA ::= SEQUENCE [1] OPTIONAL:Exist///UTRA配置数量，序列，1，可选，存在</p>
+<p>​              | | | +-measQuantityUTRA-FDD ::= ENUMERATED [cpich-RSCP]///UTRA-FDD测量指标，枚举型，cpich-RSCP</p>
+<p>​              | | | +-measQuantityUTRA-TDD ::= ENUMERATED [pccpch-RSCP]///UTRA-TDD测量指标，枚举型，pccpch-RSCP</p>
+<p>​              | | | +-filterCoefficient ::= ENUMERATED [fc0] OPTIONAL:Exist///滤波系数，枚举型，fc0，可选，存在</p>
+<p>​              | | +-quantityConfigGERAN ::= SEQUENCE [1] OPTIONAL:Exist///</p>
+<p>​              | | | +-measQuantityGERAN ::= ENUMERATED [rssi]</p>
+<p>​              | | | +-filterCoefficient ::= ENUMERATED [fc0] OPTIONAL:Exist</p>
+<p>​              | | +-quantityConfigCDMA2000 ::= SEQUENCE OPTIONAL:Exist</p>
+<p>​              | |   +-measQuantityCDMA2000 ::= ENUMERATED [pilotStrength]</p>
+<p>​              | +-measGapConfig ::= CHOICE [release] OPTIONAL:Exist</p>
+<p>​              | | +-release ::= NULL</p>
+<p>​              | +-s-Measure ::= INTEGER (0..97) [0] OPTIONAL:Exist///s-测量，整型（0..97）, 0</p>
+<p>​              | +-preRegistrationInfoHRPD ::= SEQUENCE [11] OPTIONAL:Exist///HRPD预注册信息，序列，11，可选，存在</p>
+<p>​              | | +-preRegistrationAllowed ::= BOOLEAN [FALSE]///允许预注册，布尔型，否</p>
+<p>​              | | +-preRegistrationZoneId ::= INTEGER (0..255) [0] OPTIONAL:Exist</p>
+<p>​              | | +-secondaryPreRegistrationZoneIdList ::= SEQUENCE OF SIZE(1..2) [1]</p>
+<p>​              | |   +-PreRegistrationZoneIdHRPD ::= INTEGER (0..255) [0]///HRPD预注册区ID，整型（0..255),0</p>
+<p>​              | +-speedStatePars ::= CHOICE [setup] OPTIONAL:Exist///速度状态，选择，建立，可选，存在</p>
+<p>​              |   +-setup ::= SEQUENCE///建立，序列</p>
+<p>​              |     +-mobilityStateParameters ::= SEQUENCE///移动性状态参数，序列</p>
+<p>​              |     | +-t-Evaluation ::= ENUMERATED [s30]///t-评估，枚举型，s30</p>
+<p>​              |     | +-t-HystNormal ::= ENUMERATED [s30]</p>
+<p>​              |     | +-n-CellChangeMedium ::= INTEGER (1..16) [1]</p>
+<p>​              |     | +-n-CellChangeHigh ::= INTEGER (1..16) [1]</p>
+<p>​              |     +-timeToTrigger-SF ::= SEQUENCE</p>
+<p>​              |       +-sf-Medium ::= ENUMERATED [oDot25]</p>
+<p>​              |       +-sf-High ::= ENUMERATED [oDot25]</p>
+<p>​              +-mobilityControlInfo ::= SEQUENCE OPTIONAL:Omit///移动控制消息</p>
+<p>​              +-dedicatedInfoNASList ::= SEQUENCE OF OPTIONAL:Omit///NAS列表专有信息</p>
+<p>​              +-radioResourceConfigDedicated ::= SEQUENCE OPTIONAL:Omit///无线资源专有配置</p>
+<p>​              +-securityConfigHO ::= SEQUENCE OPTIONAL:Omit///切换的安全配置</p>
+<p>​              +-nonCriticalExtension ::= SEQUENCE OPTIONAL:Omit///非关键扩展</p>
+<h3 id="RRC-Connection-Reconfiguration-for-Cell-Change-Step-14"><a href="#RRC-Connection-Reconfiguration-for-Cell-Change-Step-14" class="headerlink" title="RRC Connection Reconfiguration for Cell Change(Step 14)"></a>RRC Connection Reconfiguration for Cell Change(Step 14)</h3><p>I will add more comments later, but for now let’s just look into the contents of this message. As you see in the parts marked in red, most part of this message about measurement. As you see in the part marked red, major part of this message is ‘mobilityControlInfo’ IE and ‘secuityConfigHO’.</p>
+<p>‘mobilityControlInfo’ tells UE about the frequency of target cell and various physical channel configuration and RACH procedure information about the target cell. In short, this IE(information element) carries the most of SIB2 information of target cell.</p>
+<h1 id="Data-Flow"><a href="#Data-Flow" class="headerlink" title="Data Flow"></a>Data Flow</h1><h1 id="MIMO"><a href="#MIMO" class="headerlink" title="MIMO"></a>MIMO</h1><h1 id="载波聚合"><a href="#载波聚合" class="headerlink" title="载波聚合"></a>载波聚合</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LTE-PHY-Channel/" rel="tag"># LTE PHY ,Channel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/30/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">天花</p>
+              <p class="site-description motion-element" itemprop="description">TechNote</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#物理信道"><span class="nav-number">1.</span> <span class="nav-text">物理信道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下行物理信道"><span class="nav-number">1.1.</span> <span class="nav-text">下行物理信道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ENB→UE"><span class="nav-number">1.1.1.</span> <span class="nav-text">ENB→UE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上行物理信道"><span class="nav-number">1.2.</span> <span class="nav-text">上行物理信道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UE→ENB"><span class="nav-number">1.2.1.</span> <span class="nav-text">UE→ENB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考信号"><span class="nav-number">2.</span> <span class="nav-text">参考信号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信道评估"><span class="nav-number">2.1.</span> <span class="nav-text">信道评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考信号类型"><span class="nav-number">2.2.</span> <span class="nav-text">参考信号类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同步"><span class="nav-number">3.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小区选择"><span class="nav-number">4.</span> <span class="nav-text">小区选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小区重选"><span class="nav-number">5.</span> <span class="nav-text">小区重选</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功控"><span class="nav-number">6.</span> <span class="nav-text">功控</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测量"><span class="nav-number">7.</span> <span class="nav-text">测量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#切换"><span class="nav-number">8.</span> <span class="nav-text">切换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RRC-Connection-Reconfiguration-for-Target-Cell-Measurement-Step-11"><span class="nav-number">8.0.1.</span> <span class="nav-text">RRC Connection Reconfiguration for Target Cell Measurement (Step 11)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RRC-Connection-Reconfiguration-for-Cell-Change-Step-14"><span class="nav-number">8.0.2.</span> <span class="nav-text">RRC Connection Reconfiguration for Cell Change(Step 14)</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Flow"><span class="nav-number">9.</span> <span class="nav-text">Data Flow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MIMO"><span class="nav-number">10.</span> <span class="nav-text">MIMO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#载波聚合"><span class="nav-number">11.</span> <span class="nav-text">载波聚合</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">天花</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
