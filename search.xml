@@ -13,4 +13,16 @@
         <tag>Layer</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[WCDMA网络扰码冲突分析]]></title>
+    <url>%2F2018%2F12%2F30%2FWCDMA%E7%BD%91%E7%BB%9C%E6%89%B0%E7%A0%81%E5%86%B2%E7%AA%81%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[WCDMA网络中同扰码干扰问题原因为无线帧失步，导致下行传输误码抬升，从而引起通话质差、静音、掉话等异常现象 问题描述某用户反映在兴业银行频繁出现无法正常通话的情况，问题现场拨测，频繁静音、掉话 问题分析此次静音现象出现在导频信号良好的情况下，使用NSG采集空口参数如下图所示。当前主导频小区为SC173，WD-天心区解放西路17号-2小区，RSCP -77dBm，EcNo -7.9dB。异常参数为Uu SIR及TrCH BLER DL，其中下行传输误码急剧抬升至100% UE连续上报测量报告，e1b事件扰码为487，最后一条Measurement Report和Service Request之间相差5s，已经失步了 详细分析测量报告中小区同步信息countC-SFN-Frame-difference，无线帧同步off+tm统计如下表： PSC off tm 173 7 33791 243 198 480 487 166 29311 379 198 224 上表中SC173为静音小区扰码，243\287\397都是扰码173小区的邻区扰码。根据3GPP TS 25.215协议，它们同站的帧偏移off值应该相同。扰码243\397分别和扰码173的帧偏移差值均为191，但是扰码487和173的差值为159。 核查问题周边扰码487分布，发现WI-天心区MiuLine酒吧SBTS室分-1与WI-天心区M2酒吧SDR室分-1同扰码，直线距离仅174米 WCDMA网络中UE是根据扰码来区分确认小区的，由上述可以UE已不能正确识别扰码487是哪个小区 解决方案修改WI-天心区M2酒吧SDR室分-1扰码 经验总结 截取静音前后RRC层Measurement Report，排除e1e\e1f等事件，如此类事件过多，首先进行RF、功率调整来减少导频污染，或是新增信源主控 截取静音前后Measurement Report中e1a\e1b事件SC，进行相关小区告警及邻区核查 核查2中SC复用距离 off、tm统计分析或者结合无线环境条件，临时闭锁验证，确认扰码冲突小区 邻区优化、RF调整 （如过单独进行步骤5，近端问题得以解决，远端依然存在风险。仍然需要步骤6解决） SC复用距离过近则变更扰码 优化调整完成后验证测试]]></content>
+      <categories>
+        <category>WCDMA案例</category>
+      </categories>
+      <tags>
+        <tag>静音</tag>
+        <tag>扰码冲突</tag>
+      </tags>
+  </entry>
 </search>

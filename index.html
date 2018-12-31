@@ -386,31 +386,176 @@
 
       
         
-          
-            <h2 id="TB-CW-Layer"><a href="#TB-CW-Layer" class="headerlink" title="TB,CW,Layer"></a>TB,CW,Layer</h2><blockquote>
+          <h2 id="TB-CW-Layer"><a href="#TB-CW-Layer" class="headerlink" title="TB,CW,Layer"></a>TB,CW,Layer</h2><blockquote>
 <p><strong>TB</strong> <em>Transport Block</em><br><strong>CW</strong> <em>Code word</em></p>
 </blockquote>
 <p>一些设备供应商以Layer的形式来说明他们设备的MIMO、CA能力。例如，你可能会看到设备描述“Capable of supporting max 10 layers”等等 </p>
-<p>下面的例子抽象图示化MIMO/CA中表示TB、CW、Layer之间关系的整体数据流(每个步骤的详细过程非常复杂)，看下面的一些术语吧</p>
-<ul>
-<li>我经常听到一些人谈论“stream”，但是它的意思比较模糊，不同技术背景的人，可能有不同的认知和用法。在LTE中，Streams经常和Layers意思相同，和别人交流时候还是要注意下。</li>
-<li>下面所有的插图只表示发射端Tx，假设接收端也有同样数量的Rx天线</li>
-<li>无论在基站中有多少天线，TB和CW最大总是2</li>
-</ul>
-<p>Example : 2x2 MIMO</p>
-<p><img src="http://www.sharetechnote.com/image/LTE_MIMO_CA_TB_CW_Layer_1CC_2x2_01.png" alt="2*2"></p>
-<p>Example : 4x4 MIMO</p>
-<p><img src="http://www.sharetechnote.com/image/LTE_MIMO_CA_TB_CW_Layer_1CC_4x4_01.png" alt="4*4"></p>
-<p>Example : 2CC CA (PCC 4x4, SCC 4x4)</p>
-<p><img src="http://www.sharetechnote.com/image/LTE_MIMO_CA_TB_CW_Layer_2CC_4x4_01.png" alt="2ca"></p>
-<blockquote>
-<p>以上来自ShareTechnote，以后会尽量使用英文，汉以后难免有些词不达意</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/30/TB,CW,Layer/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/30/WCDMA网络扰码冲突分析/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="天花">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Manjuuusaka">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/30/WCDMA网络扰码冲突分析/" itemprop="url">WCDMA网络扰码冲突分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T12:02:34+08:00">
+                2018-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/WCDMA案例/" itemprop="url" rel="index">
+                    <span itemprop="name">WCDMA案例</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/30/WCDMA网络扰码冲突分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/30/WCDMA网络扰码冲突分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>WCDMA网络中同扰码干扰问题原因为无线帧失步，导致下行传输误码抬升，从而引起通话质差、静音、掉话等异常现象<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/30/WCDMA网络扰码冲突分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
     
     
     
@@ -487,7 +632,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +643,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -509,7 +654,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
