@@ -81,13 +81,14 @@
 
 <meta name="description" content="一个接地气的笔记">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Manjuuusaka">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
 <meta property="og:site_name" content="Manjuuusaka">
 <meta property="og:description" content="一个接地气的笔记">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-30T11:35:02.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manjuuusaka">
+<meta name="twitter:title" content="分类">
 <meta name="twitter:description" content="一个接地气的笔记">
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/categories/">
 
 
 
 
 
-  <title>Manjuuusaka</title>
+  <title>分类 | Manjuuusaka</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -269,181 +269,44 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/30/TB,CW,Layer/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="天花">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Manjuuusaka">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/30/TB,CW,Layer/" itemprop="url">TB CW Layer的区别</a></h1>
-        
+	<h1 class="post-title" itemprop="name headline">分类</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-30T12:02:34+08:00">
-                2018-12-30
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/LTE术语/" itemprop="url" rel="index">
-                    <span itemprop="name">LTE术语</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/30/TB,CW,Layer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/30/TB,CW,Layer/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
+      <div class="post-body">
         
-          
-            <h2 id="TB-CW-Layer"><a href="#TB-CW-Layer" class="headerlink" title="TB,CW,Layer"></a>TB,CW,Layer</h2><blockquote>
-<p><strong>TB</strong> <em>Transport Block</em><br><strong>CW</strong> <em>Code word</em></p>
-</blockquote>
-<p>一些设备供应商以Layer的形式来说明他们设备的MIMO、CA能力。例如，你可能会看到设备描述“Capable of supporting max 10 layers”等等 </p>
-<p>下面的例子抽象图示化MIMO/CA中表示TB、CW、Layer之间关系的整体数据流(每个步骤的详细过程非常复杂)，看下面的一些术语吧</p>
-<ul>
-<li>我经常听到一些人谈论“stream”，但是它的意思比较模糊，不同技术背景的人，可能有不同的认知和用法。在LTE中，Streams经常和Layers意思相同，和别人交流时候还是要注意下。</li>
-<li>下面所有的插图只表示发射端Tx，假设接收端也有同样数量的Rx天线</li>
-<li>无论在基站中有多少天线，TB和CW最大总是2</li>
-</ul>
-<p>Example : 2x2 MIMO</p>
-<p><img src="http://www.sharetechnote.com/image/LTE_MIMO_CA_TB_CW_Layer_1CC_2x2_01.png" alt="2*2"></p>
-<p>Example : 4x4 MIMO</p>
-<p><img src="http://www.sharetechnote.com/image/LTE_MIMO_CA_TB_CW_Layer_1CC_4x4_01.png" alt="4*4"></p>
-<p>Example : 2CC CA (PCC 4x4, SCC 4x4)</p>
-<p><img src="http://www.sharetechnote.com/image/LTE_MIMO_CA_TB_CW_Layer_2CC_4x4_01.png" alt="2ca"></p>
-<blockquote>
-<p>以上来自ShareTechnote，以后会尽量使用英文，汉以后难免有些词不达意</p>
-</blockquote>
-
-          
         
+          <div class="category-all-page">
+            <div class="category-all-title">
+                目前共计 1 个分类
+            </div>
+            <div class="category-all">
+              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LTE术语/">LTE术语</a><span class="category-list-count">1</span></li></ul>
+            </div>
+          </div>
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -451,6 +314,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -745,6 +615,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
